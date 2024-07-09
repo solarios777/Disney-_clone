@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const Home = (props) => {
+const Login = (props) => {
   return (
     <Container>
       <Content>
@@ -110,4 +110,4 @@ vertical-align: bottom;
 width: 100%;
 `
 
-export default Home;
+export default Login;
