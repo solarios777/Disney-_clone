@@ -22,5 +22,5 @@ const provider = new GoogleAuthProvider();
 const storage = getStorage(app);
 const moviesRef = collection(db, "movies");
 
-export { auth, provider, storage,moviesRef ,db};
+export { auth, provider, storage,moviesRef ,db,firebaseConfig};
 export default db;
