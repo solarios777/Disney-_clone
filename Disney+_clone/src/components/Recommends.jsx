@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Link, NavLink, Outlet } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { selectRecommend } from "../feature/Movie/movieSlice";
+import { selectRecommend } from "../feature/user/Movie/movieSlice";
 
 const Recommends = () => {
   const movies = useSelector(selectRecommend);
@@ -29,7 +29,6 @@ const Recommends = () => {
     </Container>
   );
 };
-;
 const Container = styled.div`
   padding: 0 0 26px;
 `;

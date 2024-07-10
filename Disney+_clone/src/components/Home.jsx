@@ -8,13 +8,11 @@ import Originals from "./Originals";
 import Trending from "./Trending";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import {moviesRef} from "../firebase";
-import { setMovies } from "../feature/Movie/movieSlice";
+import { moviesRef } from "../firebase";
+import { setMovies } from "../feature/user/Movie/movieSlice";
 import { selectUserName } from "../feature/user/userSlice";
 import { doc } from "firebase/firestore";
-import {  onSnapshot } from "firebase/firestore";
-
-
+import { onSnapshot } from "firebase/firestore";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -23,12 +21,8 @@ const Home = () => {
   let newDisney = [];
   let originals = [];
   let trending = [];
-  
 
   useEffect(() => {
-    
-   
-
     onSnapshot(moviesRef, (snapshot) => {
       snapshot.docs.forEach((doc) => {
         switch (doc.data().type) {
@@ -55,22 +49,22 @@ const Home = () => {
           trending: trending,
         })
       );
-    });;
-      }, [userName]);
+    });
+  }, [userName]);
 
-      return (
-        <>
-          <Container>
-            <ImgSlider />
-            <Viewers />
-            <Recommends />
-            <NewDisney />
-            <Originals />
-            <Trending />
-          </Container>
-        </>
-      );
-    };
+  return (
+    <>
+      <Container>
+        <ImgSlider />
+        <Viewers />
+        <Recommends />
+        <NewDisney />
+        <Originals />
+        <Trending />
+      </Container>
+    </>
+  );
+};
 
 const Container = styled.main`
   position: relative;

@@ -3,13 +3,13 @@ import styled from "styled-components";
 import { Link, NavLink, Outlet } from "react-router-dom";
 import { useSelector } from "react-redux";
 
-import { selectOriginal } from "../feature/Movie/movieSlice";
+import { selectOriginal } from "../feature/user/Movie/movieSlice";
 
 const Originals = () => {
-   const movies = useSelector(selectOriginal);
-   if (!movies) {
-     return <div>Loading...</div>;
-   }
+  const movies = useSelector(selectOriginal);
+  if (!movies) {
+    return <div>Loading...</div>;
+  }
   return (
     <Container>
       <h4>Originals</h4>

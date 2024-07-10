@@ -3,13 +3,13 @@ import styled from "styled-components";
 import { Link, NavLink, Outlet } from "react-router-dom";
 import { useSelector } from "react-redux";
 
-import { selectTrending } from "../feature/Movie/movieSlice";
+import { selectTrending } from "../feature/user/Movie/movieSlice";
 
 const Trending = () => {
-   const movies = useSelector(selectTrending);
-   if (!movies) {
-     return <div>Loading...</div>;
-   }
+  const movies = useSelector(selectTrending);
+  if (!movies) {
+    return <div>Loading...</div>;
+  }
   return (
     <Container>
       <h4>Trending</h4>

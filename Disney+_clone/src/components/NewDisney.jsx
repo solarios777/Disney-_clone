@@ -2,13 +2,13 @@ import React from "react";
 import styled from "styled-components";
 import { Link, NavLink, Outlet } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { selectNewDisney } from "../feature/Movie/movieSlice";
+import { selectNewDisney } from "../feature/user/Movie/movieSlice";
 
 const NewDisney = () => {
   const movies = useSelector(selectNewDisney);
- if (!movies) {
-   return <div>Loading...</div>;
- }
+  if (!movies) {
+    return <div>Loading...</div>;
+  }
   return (
     <Container>
       <h4>New Disney</h4>
